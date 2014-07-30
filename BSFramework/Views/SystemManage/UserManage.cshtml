@@ -1,0 +1,65 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Scripts/easyui/1.3.4/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/easyui/1.3.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+    <title>UserManage</title>
+</head>
+<body>
+
+
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'north'" style="height:50px">
+            <div>
+                用户名：
+                <input class="easyui-validatebox textbox" data-options="required:true,validType:'length[3,10]'">
+                出生日期：
+                <input id="dd" type="text" class="easyui-datebox" required="required">
+                用户名：
+                <input id="Text1" type="text" required="required">
+                出生日期：
+                <input id="dd" type="text" class="easyui-datebox" required="required">
+                <input id="Button1" type="button" value="查询" />
+            </div>
+        </div>
+        <div data-options="region:'center'">
+            <table id="dg" class="easyui-datagrid" title="用户详情"
+                   data-options="rownumbers:true,fit:true,singleSelect:true,pagination:true,url:'/SystemManage/UserManageData',method:'get'">
+                <thead>
+                    <tr>
+                        <th data-options="field:'UserGUID',checkbox:true"></th>
+                        <th data-options="field:'UserName',width:80">Item ID</th>
+                        <th data-options="field:'productid',width:100">Product</th>
+                        <th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+                        <th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+                        <th data-options="field:'attr1',width:220">Attribute</th>
+                        <th data-options="field:'status',width:60,align:'center'">Status</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    
+
+    <div style="padding-top:10px">
+        
+    </div>
+    <script type="text/javascript">
+        function changeP() {
+            var dg = $('#dg');
+            dg.datagrid('loadData', []);
+            dg.datagrid({ pagePosition: $('#p-pos').val() });
+            dg.datagrid('getPager').pagination({
+                layout: ['list', 'sep', 'first', 'prev', 'sep', $('#p-style').val(), 'sep', 'next', 'last', 'sep', 'refresh']
+            });
+        }
+    </script>
+</body>
+</html>
