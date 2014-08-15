@@ -17,59 +17,37 @@ namespace BSFramework.Controllers
             UserModels m1 = new UserModels()
             {
                 UserGUID = Guid.NewGuid().ToString(),
-                UserName = "张一"
+                UserName = "张一",
+                UserNumber="0001",
+                UserBirthDay="1990.1.1",
+                UserMail="aaa@qq.com",
+                UserPhone="13100001111"
             };
 
             UserModels m2 = new UserModels()
             {
                 UserGUID = Guid.NewGuid().ToString(),
-                UserName = "张二"
+                UserName = "张二",
+                UserNumber="0002",
+                UserBirthDay="1989.12.12",
+                UserMail="bbb@qq.com",
+                UserPhone="13100002222"
             };
 
             UserModels m3 = new UserModels()
             {
                 UserGUID = Guid.NewGuid().ToString(),
-                UserName = "张三"
+                UserName = "张三",
+                UserNumber = "0003",
+                UserBirthDay ="1989.12.12",
+                UserMail = "ccc@qq.com",
+                UserPhone = "13100003333"
             };
             List<UserModels> UserList = new List<UserModels>();
             UserList.Add(m1);
             UserList.Add(m2);
             UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
-
-
-            UserList.Add(m3);
-            UserList.Add(m3);
-
-            UserList.Add(m3);
-            UserList.Add(m3);
-            UserList.Add(m3);
+       
             return Json(new { total = UserList.Count(), rows = UserList }, "text/html", Encoding.UTF8,
 
     JsonRequestBehavior.AllowGet);
@@ -89,7 +67,7 @@ namespace BSFramework.Controllers
 
         //
         // GET: /SystemManage/Create
-        public ActionResult Create()
+        public ActionResult UserCreate()
         {
             return View();
         }

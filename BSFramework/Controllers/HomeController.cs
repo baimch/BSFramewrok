@@ -12,7 +12,7 @@ namespace BSFramework.Controllers
         {
             return View();
         }
-
+        
         public ActionResult HomePage()
         {
            
@@ -21,6 +21,12 @@ namespace BSFramework.Controllers
         }
 
         public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Regist()
         {
             ViewBag.Message = "Your contact page.";
 
