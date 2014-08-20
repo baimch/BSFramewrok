@@ -174,10 +174,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SystemManageController.cs" />
     <Compile Include="Controllers\SystemManageDataController.cs" />
+    <Compile Include="Controllers\YZCManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BarrackModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -3276,6 +3278,8 @@
     <Content Include="Scripts\temp\tree.json" />
     <Content Include="Scripts\temp\tree.php" />
     <Content Include="Views\SystemManage\UserManage.cshtml" />
+    <Content Include="Views\SystemManage\YZCReview.cshtml" />
+    <Content Include="Views\YZCManage\Barracks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
