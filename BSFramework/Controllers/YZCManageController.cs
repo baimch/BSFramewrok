@@ -45,5 +45,10 @@ namespace BSFramework.Controllers
             return Json(new { total = BarrackList.Count(), rows = BarrackList }, "text/html", Encoding.UTF8,
                 JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult JUAN()
+        {
+            return View();
+        }
     }
 }
