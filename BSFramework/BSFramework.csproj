@@ -174,13 +174,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SystemManageController.cs" />
     <Compile Include="Controllers\SystemManageDataController.cs" />
+    <Compile Include="Controllers\XMManageController.cs" />
     <Compile Include="Controllers\YZCManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BarrackModels.cs" />
+    <Compile Include="Models\CompanyModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PigModels.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -3280,6 +3283,12 @@
     <Content Include="Views\SystemManage\UserManage.cshtml" />
     <Content Include="Views\SystemManage\YZCReview.cshtml" />
     <Content Include="Views\YZCManage\Barracks.cshtml" />
+    <Content Include="Views\YZCManage\JUAN.cshtml" />
+    <Content Include="Views\XMManage\AdultPigList.cshtml" />
+    <Content Include="Views\XMManage\AdultPigCard.cshtml" />
+    <Content Include="Views\XMManage\PigletList.cshtml" />
+    <Content Include="Views\XMManage\PigletPigCard.cshtml" />
+    <Content Include="Views\SystemManage\UserCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
