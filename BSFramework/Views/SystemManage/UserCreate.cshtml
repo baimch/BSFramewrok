@@ -13,17 +13,57 @@
     <script src="~/Scripts/easyui/1.3.4/jquery.easyui.min.js"></script>
     <script src="~/Scripts/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
     <title>UserCreate</title>
+    <style>
+        .tablelable {
+            border: 1px solid #ccc;
+            background-color: rgb(236,243,255);
+            width: 80px;
+        }
+
+        .tableControl {
+            border: 1px solid #ccc;
+            background-color: rgb(250,252,255);
+            width: 180px;
+        }
+
+        .tableForm {
+            BORDER-COLLAPSE: collapse;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="easyui-tabs" style="width:700px;height:auto">
         <div title="用户基本信息" style="padding:10px">
-            <table style="width:100%;">
-                <tr><td>姓名</td><td><input id="Text1" type="text" /></td><td>年龄</td><td><input id="Text2" type="text" /></td><td>年龄</td><td><input id="Text2" type="text" /></td></tr>
-                <tr><td>姓名</td><td><input id="Text1" type="text" /></td><td>年龄</td><td><input id="Text2" type="text" /></td><td>年龄</td><td><input id="Text2" type="text" /></td></tr>
-                <tr><td>姓名</td><td><input id="Text1" type="text" /></td><td>年龄</td><td><input id="Text2" type="text" /></td><td>年龄</td><td><input id="Text2" type="text" /></td></tr>
+            <table class="tableForm">
+                <tr style="height: 30px;">
+                    <td class="tablelable">工号</td>
+                    <td class="tableControl"><input id=" text2" type="text" /></td>
+                    <td class="tablelable">姓名</td>
+                    <td class="tableControl"><input id=" text2" type="text" /></td>
+                    <td class="tablelable">出生日期</td>
+                    <td class="tableControl"><input id=" text2" type="text" /></td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td class="tablelable">电话号</td>
+                    <td class="tableControl"><input id="Text1" type="text" /></td>
+                    <td class="tablelable">邮箱</td>
+                    <td class="tableControl"><input id=" text2" type="text" /></td>
+                    <td class="tablelable">出生日期</td>
+                    <td class="tableControl"><input id=" text2" type="text" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             </table>
+
+
 
         </div>
         <div title="其他信息" style="padding:10px">
