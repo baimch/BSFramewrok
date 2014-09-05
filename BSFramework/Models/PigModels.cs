@@ -19,7 +19,7 @@ namespace BSFramework.Models
          [Display(Name = "生产次数")]
         public string PigBornCount { get; set; }
          [Display(Name = "所在圈")]
-         public string PigJUAN { get; set; }
+         public BarrackModels PigJUAN { get; set; }
          [Display(Name = "现状")]
          public string PigState { get; set; }//0.带配种 1.待产 2.育仔
 

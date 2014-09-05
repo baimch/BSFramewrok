@@ -26,5 +26,7 @@ namespace BSFramework.Models
         public string BarrackPrice { get; set; }
         [Display(Name = "建造年份")]
         public string Barrackbirth { get; set; }
+
+        public CompanyModels company { get; set; }
     }
 }

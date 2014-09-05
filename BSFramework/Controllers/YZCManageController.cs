@@ -27,7 +27,8 @@ namespace BSFramework.Controllers
                 BarrackPrice = "3000",
                 BarrackArea = "100平米",
                 Barrackbirth = "2010年9月",
-                Barrackcapacity="20"
+                Barrackcapacity = "20",
+                company = new CompanyModels() { CompanyGUID = "aaa", CompanyName = "sdsdsdsd" }
             };
             BarrackModels m2 = new BarrackModels()
             {
@@ -47,6 +48,11 @@ namespace BSFramework.Controllers
         }
 
         public ActionResult JUAN()
+        {
+            return View();
+        }
+
+        public ActionResult BarracksCreate()
         {
             return View();
         }
