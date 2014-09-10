@@ -12,6 +12,17 @@ namespace BSFramework.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public void  Index(string aa)
+        {
+
+            Response.Redirect("/home/framework");
+
+        }
+        public ActionResult Framework()
+        {
+            return View();
+        }
         
         public ActionResult HomePage()
         {

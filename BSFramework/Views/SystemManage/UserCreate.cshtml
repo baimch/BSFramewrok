@@ -33,44 +33,46 @@
 </head>
 
 <body>
-
-    <div class="easyui-tabs" style="width:700px;height:auto">
-        <div title="用户基本信息" style="padding:10px">
-            <table class="tableForm">
-                <tr style="height: 30px;">
-                    <td class="tablelable">工号</td>
-                    <td class="tableControl"><input id=" text2" type="text" /></td>
-                    <td class="tablelable">姓名</td>
-                    <td class="tableControl"><input id=" text2" type="text" /></td>
-                    <td class="tablelable">出生日期</td>
-                    <td class="tableControl"><input id=" text2" type="text" /></td>
-                </tr>
-                <tr style="height: 30px;">
-                    <td class="tablelable">电话号</td>
-                    <td class="tableControl"><input id="Text1" type="text" /></td>
-                    <td class="tablelable">邮箱</td>
-                    <td class="tableControl"><input id=" text2" type="text" /></td>
-                    <td class="tablelable">出生日期</td>
-                    <td class="tableControl"><input id=" text2" type="text" /></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-
-
-
+    <form  method="post">
+        <div class="easyui-panel" style="width:700px;height:auto">
+            <a href="#" class="easyui-linkbutton" data-options="plain:true">确定</a>
+            <a href="#" class="easyui-linkbutton" data-options="plain:true">取消</a>
         </div>
-        <div title="其他信息" style="padding:10px">
-            <ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
-        </div>
-    </div>
+        <div class="easyui-tabs" style="width:700px;height:auto">
 
+            <div title="用户基本信息" style="padding:10px">
+                <table class="tableForm">
+                    <tr style="height: 30px;">
+                        <td class="tablelable">工号</td>
+                        <td class="tableControl"><input id=" text2" type="text" /></td>
+                        <td class="tablelable">姓名</td>
+                        <td class="tableControl"><input id=" text2" type="text" /></td>
+                        <td class="tablelable">出生日期</td>
+                        <td class="tableControl"><input id=" text2" type="text" /></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td class="tablelable">电话号</td>
+                        <td class="tableControl"><input id="Text1" type="text" /></td>
+                        <td class="tablelable">邮箱</td>
+                        <td class="tableControl"><input id=" text2" type="text" /></td>
+                        <td class="tablelable">出生日期</td>
+                        <td class="tableControl"><input id=" text2" type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div title="其他信息" style="padding:10px">
+                <ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
+            </div>
+        </div>
+    </form>
 </body>
 
 </html>
