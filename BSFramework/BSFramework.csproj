@@ -3308,9 +3308,25 @@
       <Project>{761686f6-93a6-4313-94d5-29dc65492ec0}</Project>
       <Name>BSF.Core.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BSF.Core.Models\BSF.Core.Models.csproj">
+      <Project>{cd4a2973-b3c1-4397-8855-a007428b760c}</Project>
+      <Name>BSF.Core.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF.Core\BSF.Core.csproj">
+      <Project>{b9fe21d8-fea9-4360-aaf4-b7e0417b5956}</Project>
+      <Name>BSF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF.Site.Models\BSF.Site.Models.csproj">
+      <Project>{4bc52a24-a10e-4255-83d6-bdb028773122}</Project>
+      <Name>BSF.Site.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BSF.Site\BSF.Site.csproj">
       <Project>{e2a9dd75-367e-4081-8b2b-f736154439b5}</Project>
       <Name>BSF.Site</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BSF.Tools\BSF.Tools.csproj">
+      <Project>{a6dfe374-fd47-482a-b733-852c6d840d34}</Project>
+      <Name>BSF.Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

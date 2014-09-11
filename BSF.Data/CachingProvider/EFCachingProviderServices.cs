@@ -1,8 +1,10 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System.Data.Common;
-using System.Data.Common.CommandTrees;
+//using System.Data.Common.CommandTrees;
 using EFProviderWrapperToolkit;
+using System.Data.Entity.Core.Common;
+using System.Data.Entity.Core.Common.CommandTrees;
 
 namespace EFCachingProvider
 {

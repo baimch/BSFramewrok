@@ -2,6 +2,7 @@
 
 using System;
 using System.Data.Common;
+using System.Data.Entity.Core.Common;
 
 namespace EFCachingProvider
 {

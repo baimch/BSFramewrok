@@ -3,9 +3,12 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.EntityClient;
-using System.Data.Mapping;
-using System.Data.Metadata.Edm;
+using System.Data.Entity.Core.EntityClient;
+using System.Data.Entity.Core.Mapping;
+using System.Data.Entity.Core.Metadata.Edm;
+//using System.Data.EntityClient;
+//using System.Data.Mapping;
+//using System.Data.Metadata.Edm;
 using System.IO;
 using System.Linq;
 using System.Reflection;

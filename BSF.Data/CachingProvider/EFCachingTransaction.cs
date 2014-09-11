@@ -2,10 +2,11 @@
 
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.Metadata.Edm;
+//using System.Data.Metadata.Edm;
 using System.Linq;
 using EFCachingProvider.Caching;
 using EFProviderWrapperToolkit;
+using System.Data.Entity.Core.Metadata.Edm;
 
 namespace EFCachingProvider
 {
