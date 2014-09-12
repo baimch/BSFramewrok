@@ -1,14 +1,13 @@
-﻿using System;
+﻿using DataBase;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition.Hosting;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using BSF.Core.Data.Initialize;
-using BSF.Site.Helper.Ioc;
+
 namespace BSFramework
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -19,15 +18,8 @@ namespace BSFramework
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            //设置MEF依赖注入容器
-            DirectoryCatalog catalog = new DirectoryCatalog(AppDomain.CurrentDomain.SetupInformation.PrivateBinPath);
-            MefDependencySolver solver = new MefDependencySolver(catalog);
-            DependencyResolver.SetResolver(solver);
-
-            DatabaseInitializer.Initialize();
-
-
+            //初始化数据库 已经在配置文件中配置，此处无需添加
+           Database.SetInitializer<DataBaseContext>(new DatabaseInitializer());
         }
     }
 }

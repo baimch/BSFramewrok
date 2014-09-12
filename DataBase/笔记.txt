@@ -1,0 +1,2 @@
+﻿1、
+Enable-Migrations -ContextTypeName "DataBaseContext" -ProjectName "DataBase" -StartUpProjectName "BSFramework" -ConnectionStringName "default" -Verbose -force

@@ -1,45 +1,38 @@
-﻿using BSF.Core.Models.Account;
-using BSF.Site;
-using BSF.Site.Models;
-using BSF.Tools;
-using BSFramework.Models;
+﻿using BSFramework.Models;
+using DataBase;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using DataBase;
 
 namespace BSFramework.Controllers
 {
-    [Export]
     public class SystemManageController : Controller
     {
-        [Import]
-        public IAccountSiteContract AccountContract { get; set; }
         //
-       
-        public JsonResult UserManageData(int? page,int? rows)
+        // GET: /SystemManage/
+        public JsonResult UserManageData()
         {
-            int mpage = page ?? 1;
-             int pageSize = rows??10;
-            PropertySortCondition[] sortConditions = new[] { new PropertySortCondition("Id") };
-            int total;
-            var memberViews = AccountContract.Members.Where<Member, int>(m => true, mpage, pageSize, out total, sortConditions).Select(m => new MemberView
-            {
-                UserName = m.UserName,
-                NickName = m.NickName,
-                Email = m.Email,
-                IsDeleted = m.IsDeleted,
-                AddDate =m.AddDate,
-                LoginLogCount = m.LoginLogs.Count,
-                RoleNames = m.Roles.Select(n => n.Name)
-            });
-            //  PagedList<MemberView> model = new PagedList<MemberView>(memberViews, pageIndex, pageSize, total);
-            // return View(model);         
-            return Json(new { total = total, rows = memberViews }, "text/html", Encoding.UTF8,
+
+            using (DataBaseContext context = new DataBaseContext())
+            {               
+                var UserList = context.UserContext.Select(
+                    m => new UserModelsView
+                    {
+                        UserGUID = m.UserGUID,
+                        UserName = m.UserName,
+                        UserBirthDay = m.UserBirthDay,
+                        UserMail = m.UserMail,
+                        UserNumber = m.UserNumber,
+                        UserPhone = m.UserPhone
+                    }).ToList();
+            
+            return Json(new { total = UserList.Count(), rows = UserList }, "text/html", Encoding.UTF8,
                 JsonRequestBehavior.AllowGet);
+            }
 
         }
         public ActionResult UserManage()
