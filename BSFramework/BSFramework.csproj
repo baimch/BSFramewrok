@@ -180,6 +180,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409120323536_FirstMigration.cs" />
+    <Compile Include="Migrations\201409120323536_FirstMigration.Designer.cs">
+      <DependentUpon>201409120323536_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BarrackModels.cs" />
     <Compile Include="Models\CompanyModels.cs" />
@@ -198,6 +203,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\css\icon.css" />
     <Content Include="Scripts\css\icons\accept.png" />
     <Content Include="Scripts\css\icons\add.png" />
@@ -3304,30 +3310,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BSF.Core.Data\BSF.Core.Data.csproj">
-      <Project>{761686f6-93a6-4313-94d5-29dc65492ec0}</Project>
-      <Name>BSF.Core.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BSF.Core.Models\BSF.Core.Models.csproj">
-      <Project>{cd4a2973-b3c1-4397-8855-a007428b760c}</Project>
-      <Name>BSF.Core.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BSF.Core\BSF.Core.csproj">
-      <Project>{b9fe21d8-fea9-4360-aaf4-b7e0417b5956}</Project>
-      <Name>BSF.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BSF.Site.Models\BSF.Site.Models.csproj">
-      <Project>{4bc52a24-a10e-4255-83d6-bdb028773122}</Project>
-      <Name>BSF.Site.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BSF.Site\BSF.Site.csproj">
-      <Project>{e2a9dd75-367e-4081-8b2b-f736154439b5}</Project>
-      <Name>BSF.Site</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BSF.Tools\BSF.Tools.csproj">
-      <Project>{a6dfe374-fd47-482a-b733-852c6d840d34}</Project>
-      <Name>BSF.Tools</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\201409120323536_FirstMigration.resx">
+      <DependentUpon>201409120323536_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
