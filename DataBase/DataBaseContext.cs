@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using DatabaseModels;
+using DataBase.Configuration;
 namespace DataBase
 {
     public class DataBaseContext : DbContext
@@ -23,9 +24,16 @@ namespace DataBase
        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Configurations.Add(new HrefConfiguration());
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<UserModels> UserContext { get; set; }
         public DbSet<PigModels> PigContext { get; set; }
+        public DbSet<AccordionModels> AccordionContext { get; set; }
+        public DbSet<HrefModels> HrefContext { get; set; }
+
+       
+     
+
     }
 }

@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccordionModels.cs" />
     <Compile Include="BarrackModels.cs" />
+    <Compile Include="BaseModels.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CompanyModels.cs" />
+    <Compile Include="HrefModels.cs" />
     <Compile Include="JuanModels.cs" />
     <Compile Include="PigModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

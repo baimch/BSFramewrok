@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using DataBase;
 
 namespace BSFramework.Controllers
 {
@@ -73,7 +72,7 @@ namespace BSFramework.Controllers
 
         //
         // GET: /SystemManage/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Regist()
         {
             return View();
         }

@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DatabaseModels
+{
+   public  class AccordionModels
+    {
+       [Required]
+       [Key]
+       public string ID { get; set; }
+        [Required]
+        [Display(Name = "名称")]
+        public string title { get; set; }
+        [Display(Name = "icon")]
+        public string icon { get; set; }
+
+        public virtual ICollection<HrefModels> Hrefs { get; set; }
+    }
+}

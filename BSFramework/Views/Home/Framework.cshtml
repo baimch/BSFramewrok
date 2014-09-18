@@ -1,5 +1,4 @@
-﻿@model IEnumerable<DatabaseModels.AccordionModels>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,18 +46,6 @@
     <!-- begin of sidebar -->
     <div class="wu-sidebar" data-options="region:'west',split:true,border:true,title:'导航菜单'">
         <div class="easyui-accordion" data-options="border:false,fit:true">
-            @foreach (var item in Model)
-            {
-                <div title="@item.title" data-options="iconCls:'@item.icon'" style="padding:5px;">
-                    <ul class="easyui-tree wu-side-tree">
-                        @foreach (var href in item.Hrefs)
-                        {
-                            <li iconcls="@href.icon"><a href="javascript:void(0)" data-icon="@href.icon" data-link="@href.link" iframe="@href.iFrame">@href.title</a></li>
-
-                        }
-                    </ul>
-                </div>
-            }
             <div title="系统管理" data-options="iconCls:'icon-application-cascade'" style="padding:5px;">
                 <ul class="easyui-tree wu-side-tree">
                     <li iconcls="icon-chart-organisation"><a href="javascript:void(0)" data-icon="icon-chart-organisation" data-link="/Home/HomePage" iframe="0">菜单导航</a></li>
@@ -236,3 +223,4 @@
     </script>
 </body>
 </html>
+

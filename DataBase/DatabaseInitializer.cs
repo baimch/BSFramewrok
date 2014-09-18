@@ -10,10 +10,11 @@ using System.Data.Entity.Migrations;
 
 namespace DataBase
 {
-    public class DatabaseInitializer : CreateDatabaseIfNotExists <DataBaseContext>
+    public class DatabaseInitializer : DropCreateDatabaseAlways<DataBaseContext>
     {
         protected override void Seed(DataBaseContext context)
         {
+            #region 初始化用户信息
             UserModels m1 = new UserModels()
             {
                 UserGUID = Guid.NewGuid().ToString(),
@@ -22,7 +23,7 @@ namespace DataBase
                 UserBirthDay = "1990.1.1",
                 UserMail = "aaa@qq.com",
                 UserPhone = "13100001111",
-                Password="aaaaaa"
+                Password = "aaaaaa"
             };
 
             UserModels m2 = new UserModels()
@@ -46,14 +47,66 @@ namespace DataBase
                 UserPhone = "13100003333",
                 Password = "aaaaaa"
             };
+            #endregion
 
+            #region 初始化Accordion
+            AccordionModels a1 = new AccordionModels()
+            {
+                ID = Guid.NewGuid().ToString(),
+                title = "系统管理",
+                icon = "icon-application-cascade"
+            };
+            AccordionModels a2 = new AccordionModels()
+            {
+                ID = Guid.NewGuid().ToString(),
+                title = "人力资源管理",
+                icon = "icon-application-form-edit"
+            };
 
-            try { // 写数据库 
+            HrefModels h1 = new HrefModels()
+            {
+                ID = Guid.NewGuid().ToString(),
+                title = "用户管理",
+                icon = "icon-users",
+                link = "/SystemManage/UserManage",
+                iFrame = 0,
+                Accordion = a1
+            };
+            HrefModels h2 = new HrefModels()
+            {
+                ID = Guid.NewGuid().ToString(),
+                title = "功能菜单管理",
+                icon = "icon-users",
+                link = "/SystemManage/UserManage",
+                iFrame = 0,
+                Accordion = a1
+            };
+            HrefModels h3 = new HrefModels()
+            {
+                ID = Guid.NewGuid().ToString(),
+                title = "角色管理",
+                icon = "icon-users",
+                link = "/SystemManage/UserManage",
+                iFrame = 0,
+                Accordion = a1
+            };
+            #endregion
+
+            try
+            { // 写数据库 
 
                 context.UserContext.AddOrUpdate(m1);
                 context.UserContext.AddOrUpdate(m2);
                 context.UserContext.AddOrUpdate(m3);
-            context.SaveChanges();
+
+                context.AccordionContext.AddOrUpdate(a1);
+                context.AccordionContext.AddOrUpdate(a2);
+
+                context.HrefContext.AddOrUpdate(h1);
+                context.HrefContext.AddOrUpdate(h2);
+                context.HrefContext.AddOrUpdate(h3);
+
+                context.SaveChanges();
             }
             catch (DbEntityValidationException dbEx) { }
             base.Seed(context);
