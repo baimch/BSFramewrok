@@ -54,13 +54,15 @@ namespace DataBase
             {
                 ID = Guid.NewGuid().ToString(),
                 title = "系统管理",
-                icon = "icon-application-cascade"
+                icon = "icon-application-cascade",
+                order=1
             };
             AccordionModels a2 = new AccordionModels()
             {
                 ID = Guid.NewGuid().ToString(),
                 title = "人力资源管理",
-                icon = "icon-application-form-edit"
+                icon = "icon-application-form-edit",
+                order=2
             };
 
             HrefModels h1 = new HrefModels()
@@ -77,7 +79,7 @@ namespace DataBase
                 ID = Guid.NewGuid().ToString(),
                 title = "功能菜单管理",
                 icon = "icon-users",
-                link = "/SystemManage/UserManage",
+                link = "/Home/AccordionManage",
                 iFrame = 0,
                 Accordion = a1
             };

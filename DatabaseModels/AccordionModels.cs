@@ -17,6 +17,8 @@ namespace DatabaseModels
         public string title { get; set; }
         [Display(Name = "icon")]
         public string icon { get; set; }
+        [Display(Name = "顺序号")]
+        public int order { get; set; }
 
         public virtual ICollection<HrefModels> Hrefs { get; set; }
     }
