@@ -180,7 +180,14 @@
                 iconCls: 'icon-reload',
                 border: false,
                 handler: function () {
-                    $('#wu-datagrid').datagrid('reload');
+                    //$('#wu-datagrid').datagrid('reload');
+                    var tab = $('#wu-tabs').tabs('getSelected');  // get selected panel
+                    if (tab) {
+                        tab.panel('refresh', null);
+                    }
+                    
+                  //  $('#wu-tabs').tabs('update');
+
                 }
             }]
         });
@@ -230,6 +237,17 @@
             if (tab) {
                 var index = tabPanel.tabs('getTabIndex', tab);
                 tabPanel.tabs('close', index);
+            }
+        }
+		
+		 function getDetail() {
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $('#dg2').datagrid('reload', {
+                    AccordionID: row.ID                    
+                });
+
+                //alert('Item ID:' + row.ID + "\nPrice:" + row.title);
             }
         }
 

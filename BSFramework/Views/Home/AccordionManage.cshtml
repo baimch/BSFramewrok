@@ -131,11 +131,12 @@
                 layout: ['list', 'sep', 'first', 'prev', 'sep', $('#p-style').val(), 'sep', 'next', 'last', 'sep', 'refresh']
             });
         }
-        function getDetail() {
-            var row = $('#dg').datagrid('getSelected');
-            if (row) {
+        function getDetail(index, data) {
+            var selectdata = data;
+           // var row = $('#dg').datagrid('getSelected');
+            if (selectdata) {
                 $('#dg2').datagrid('reload', {
-                    AccordionID: row.ID                    
+                    AccordionID: selectdata.ID
                 });
 
                 //alert('Item ID:' + row.ID + "\nPrice:" + row.title);
