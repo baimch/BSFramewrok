@@ -69,18 +69,58 @@ namespace BSFramework.Controllers
         [HttpPost]
         public void AccordionCreate()
         {
-           // var aa = form["acctitle"];
+            // var aa = form["acctitle"];
 
-            if (Request.Form[" acctitle"] != null)
+            if (Request.Form["acctitle"] != null)
             {
-                string title = Request.Form["acctitle"].ToString();
+                using (DataBaseContext context = new DataBaseContext())
+                {
+                    try
+                    {
+                        AccordionModels a = new AccordionModels()
+                        {
+                            ID = Guid.NewGuid().ToString(),
+                            title = Request.Form["acctitle"].ToString(),
+                            icon = Request.Form["accicon"].ToString(),
+                            order = int.Parse(Request.Form["accorder"])
+                        };
+                        context.AccordionContext.Add(a);
+                        context.SaveChanges();                      
+                    }
+                    catch (Exception e) { throw e; }
+
+                }
             }
-          //  return View("AccordionAdd");
+            //  return View("AccordionAdd");
+        }
+
+        [HttpPost]
+        public void AccordionDelete(string id)
+        {
+            // var aa = form["acctitle"];
+
+            if (Request.Form!= null)
+            {
+                using (DataBaseContext context = new DataBaseContext())
+                {
+                    string Accid = Request.Form.ToString();
+                    try
+                    {
+                       var data= context.AccordionContext.Where(a => a.ID == Accid).FirstOrDefault();
+                       context.AccordionContext.Remove(data);                        
+                           //context.AccordionContext.Add(a);
+                        context.SaveChanges();
+                    }
+                    catch (Exception e) { throw e; }
+
+                }
+            }
+            //  return View("AccordionAdd");
         }
         public ActionResult AccordionAdd()
         {
 
-            
+
             return View();
         }
 

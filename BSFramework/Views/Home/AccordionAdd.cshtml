@@ -44,10 +44,13 @@
                 data: $('#accadd').serialize(),// formid
                 async: false,
                 error: function (request) {
-                    alert("保存失败");
+                    alert("保存失败,请检查输入是否合法");
                 },
                 success: function (data) {
-                    alert("保存成功");
+                    alert("保存成功");                    
+                    $('#w').window('close');
+                    $('#accadd').form('clear');
+                    ReloadData('dg');
                 }
             });
         }
@@ -59,11 +62,11 @@
                 <table class="tableForm">
                     <tr style="height: 30px;">
                         <td class="tablelable">名称</td>
-                        <td class="tableControl"><input name=" acctitle" type="text" /></td>
+                        <td class="tableControl"><input name="acctitle" type="text" /></td>
                         <td class="tablelable">icon</td>
-                        <td class="tableControl"><input name=" accicon" type="text" /></td>
+                        <td class="tableControl"><input name="accicon" type="text" /></td>
                         <td class="tablelable">顺序号</td>
-                        <td class="tableControl"><input name=" accorder" type="text" /></td>
+                        <td class="tableControl"><input name="accorder" type="text" /></td>
                     </tr>
 
                     <tr>

@@ -17,10 +17,12 @@
         <div data-options="region:'west'" style="width:350px;padding-top:10px">
 
             <table id="dg" class="easyui-datagrid" title="功能分组"
-                   data-options="rownumbers:true,fit:true,singleSelect:true,url:'/home/AccordionManageData',method:'get',onClickRow:getDetail">
+                   data-options="idField:'ID',rownumbers:true,fit:true,sortName:'title',
+                   sortOrder:'asc',sortable:true,singleSelect:true,url:'/home/AccordionManageData',
+                   method:'post',onClickRow:getDetail">
                 <thead>
                     <tr>
-                        <th data-options="field:'ID',width:80">ID</th>
+                        <th data-options="field:'ID',width:80,hidden:true">ID</th>
                         <th data-options="field:'title',width:80">名称</th>
                         <th data-options="field:'icon',width:100">图标</th>
                         <th data-options="field:'order',width:100">序号</th>
@@ -52,7 +54,7 @@
                         <div id="mm1" style="width:150px;">
                             <div data-options="iconCls:'icon-undo'" onclick="$('#w').window('open')">添加分组</div>
                             <div data-options="iconCls:'icon-undo'" onclick="$('#w2').window('open')">添加功能</div>
-                            <div data-options="iconCls:'icon-redo'">删除</div>
+                            <div data-options="iconCls:'icon-redo'" onclick="DeleteAccordion()">删除</div>
                             <div class="menu-sep"></div>
                             <div>复制</div>
                             <div>撤销</div>
@@ -99,7 +101,7 @@
                 <div data-options="region:'center'">
 
                     <table id="dg2" class="easyui-datagrid" title="导航详情"
-                           data-options="rownumbers:true,fit:true,singleSelect:true,pagination:true,url:'/home/HrefManageData',method:'get'">
+                           data-options="rownumbers:true,fit:true,singleSelect:true,pagination:true,url:'/home/HrefManageData',method:'post'">
                         <thead>
                             <tr>
                                 <th data-options="field:'ID',checkbox:true"></th>
@@ -120,10 +122,10 @@
     <div style="padding-top:10px">
 
     </div>
-    <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/Home/AccordionAdd'" style="width:500px;height:400px;padding:10px;">
+    <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/Home/AccordionAdd'" style="width:700px;height:400px;padding:10px;">
         The window content.
     </div>
-    <div id="w2" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/SystemManage/UserCreate'" style="width:500px;height:400px;padding:10px;">
+    <div id="w2" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/SystemManage/UserCreate'" style="width:700px;height:400px;padding:10px;">
         The window content.
     </div>
     <script type="text/javascript">
@@ -137,13 +139,32 @@
         }
         function getDetail(index, data) {
             var selectdata = data;
-           // var row = $('#dg').datagrid('getSelected');
+            // var row = $('#dg').datagrid('getSelected');
             if (selectdata) {
                 $('#dg2').datagrid('reload', {
                     AccordionID: selectdata.ID
                 });
 
                 //alert('Item ID:' + row.ID + "\nPrice:" + row.title);
+            }
+        }
+        function DeleteAccordion() {
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                $.ajax({
+                    cache: true,
+                    type: "POST",
+                    url: "/home/AccordionDelete",
+                    data: row.ID,// formid
+                    async: false,
+                    error: function (request) {
+                        alert("删除失败");
+                    },
+                    success: function (data) {
+                        alert("删除成功");                                              
+                        $('#dg').datagrid('reload');
+                    }
+                });
             }
         }
     </script>
