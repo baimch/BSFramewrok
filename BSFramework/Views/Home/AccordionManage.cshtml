@@ -50,7 +50,8 @@
 
                         </div>
                         <div id="mm1" style="width:150px;">
-                            <div data-options="iconCls:'icon-undo'" onclick="$('#w').window('open')">添加</div>
+                            <div data-options="iconCls:'icon-undo'" onclick="$('#w').window('open')">添加分组</div>
+                            <div data-options="iconCls:'icon-undo'" onclick="$('#w2').window('open')">添加功能</div>
                             <div data-options="iconCls:'icon-redo'">删除</div>
                             <div class="menu-sep"></div>
                             <div>复制</div>
@@ -119,7 +120,10 @@
     <div style="padding-top:10px">
 
     </div>
-    <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/SystemManage/UserCreate'" style="width:500px;height:200px;padding:10px;">
+    <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/Home/AccordionAdd'" style="width:500px;height:400px;padding:10px;">
+        The window content.
+    </div>
+    <div id="w2" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/SystemManage/UserCreate'" style="width:500px;height:400px;padding:10px;">
         The window content.
     </div>
     <script type="text/javascript">

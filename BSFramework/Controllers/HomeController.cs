@@ -65,6 +65,25 @@ namespace BSFramework.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public void AccordionCreate()
+        {
+           // var aa = form["acctitle"];
+
+            if (Request.Form[" acctitle"] != null)
+            {
+                string title = Request.Form["acctitle"].ToString();
+            }
+          //  return View("AccordionAdd");
+        }
+        public ActionResult AccordionAdd()
+        {
+
+            
+            return View();
+        }
+
         public JsonResult AccordionManageData()
         {
             using (DataBaseContext context = new DataBaseContext())
@@ -108,7 +127,7 @@ namespace BSFramework.Controllers
                 {
                     // accordions = context.AccordionContext.Include("Hrefs").ToList();
 
-                    List<HrefModels> HrefModelsModels = context.HrefContext.Where(h=>h.Accordion.ID==parentID).Select(a => new
+                    List<HrefModels> HrefModelsModels = context.HrefContext.Where(h => h.Accordion.ID == parentID).Select(a => new
                     {
                         a.ID,
                         a.title,
@@ -123,9 +142,9 @@ namespace BSFramework.Controllers
                         ID = b.icon,
                         title = b.title,
                         icon = b.icon,
-                        iFrame=b.iFrame,
-                        link=b.link,
-                        Accordion=new AccordionModels(){title=b.Accordion.title}
+                        iFrame = b.iFrame,
+                        link = b.link,
+                        Accordion = new AccordionModels() { title = b.Accordion.title }
                     }).ToList();
 
                     return Json(new { total = HrefModelsModels.Count(), rows = HrefModelsModels }, "text/html", Encoding.UTF8,
