@@ -172,7 +172,6 @@ D:\GitHub\BSFramewrok\BSFramework\bin\System.Web.Razor.xml
 D:\GitHub\BSFramewrok\BSFramework\bin\System.Web.WebPages.xml
 D:\GitHub\BSFramewrok\BSFramework\bin\System.Web.WebPages.Deployment.xml
 D:\GitHub\BSFramewrok\BSFramework\bin\System.Web.WebPages.Razor.xml
-D:\GitHub\BSFramewrok\BSFramework\bin\Newtonsoft.Json.xml
 D:\GitHub\BSFramewrok\BSFramework\bin\Antlr3.Runtime.pdb
 D:\GitHub\BSFramewrok\BSFramework\bin\Microsoft.AspNet.Identity.Core.xml
 D:\GitHub\BSFramewrok\BSFramework\bin\Microsoft.AspNet.Identity.Owin.xml
@@ -189,3 +188,4 @@ D:\GitHub\BSFramewrok\BSFramework\bin\Microsoft.Owin.Security.MicrosoftAccount.x
 D:\GitHub\BSFramewrok\BSFramework\obj\Debug\BSFramework.csprojResolveAssemblyReference.cache
 D:\GitHub\BSFramewrok\BSFramework\obj\Debug\BSFramework.dll
 D:\GitHub\BSFramewrok\BSFramework\obj\Debug\BSFramework.pdb
+D:\GitHub\BSFramewrok\BSFramework\bin\Newtonsoft.Json.xml
