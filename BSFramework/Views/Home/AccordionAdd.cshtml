@@ -7,12 +7,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
+
+    <script src="~/Scripts/easyui/1.4/jquery.min.js"></script>
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link href="~/Scripts/css/icon.css" rel="stylesheet" />
-    <link href="~/Scripts/easyui/1.3.4/themes/default/easyui.css" rel="stylesheet" />
-    <script src="~/Scripts/easyui/1.3.4/jquery.easyui.min.js"></script>
-    <script src="~/Scripts/easyui/1.3.4/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Scripts/easyui/1.4/themes/default/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/easyui/1.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/easyui/1.4/locale/easyui-lang-zh_CN.js"></script>
     <title>UserCreate</title>
     <style>
         .tablelable {
@@ -55,9 +56,21 @@
                 }
             });
         }
+        function showicon() {
+            $('#choseicons').window('open');
+        }
+
         function getClass(obj) {
-            alert(obj.id);
-            $('#selectedicon').attr("class", 'icon-'+obj.id);
+            //alert(obj.id);
+            // $('#selectedicon').attr("class", 'icon-' + obj.id);
+            $('#accicon').textbox({
+                value: 'icon-' + obj.id,
+                iconCls: 'icon-' + obj.id,
+                iconAlign: 'left'
+            })
+
+            //$('#accicon').attr("value", 'icon-' + obj.id);//
+            $('#choseicons').window('close');
         }
     </script>
     <form id="accadd" method="post">
@@ -68,7 +81,21 @@
                         <td class="tablelable">名称</td>
                         <td class="tableControl"><input name="acctitle" type="text" /></td>
                         <td class="tablelable">icon</td>
-                        <td class="tableControl"><input name="accicon" type="text" /><img id='selectedicon' class="icon-accept" /></td>
+                        <td class="tableControl">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input class="easyui-textbox" id="accicon" name="accicon" data-options="prompt:'Search...'">
+                                    </td>
+                                    <td>
+                                        <input id="Button1" type="button" value="选择" onclick="showicon()" />
+                                    </td>
+                                </tr>
+                            </table>
+                                
+                                
+                            
+                        </td>
                         <td class="tablelable">顺序号</td>
                         <td class="tableControl"><input name="accorder" type="text" /></td>
                     </tr>
@@ -88,15 +115,12 @@
 
             </div>
             <div title="其他信息" style="padding:10px">
-                <ul class="easyui-tree" data-options="url:'tree_data1.json',method:'get',animate:true"></ul>
+               
             </div>
         </div>
-        <div id="choseicons" class="easyui-window" title="Modal Window" data-options="modal:true,closed:false,iconCls:'icon-save'" style="width:700px;height:400px;padding:10px;">
+        <div id="choseicons" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save'" style="width:700px;height:400px;padding:10px;">
 
-            <div>
-
-                
-                "
+           
                 <img class="icon-accept" id="accept" onclick="getClass(this)" />
                 <img class="icon-add" id="add" onclick="getClass(this)" />
                 <img class="icon-add1" id="add1" onclick="getClass(this)" />
@@ -1618,9 +1642,8 @@
                 <img class="icon-zoom" id="zoom" onclick="getClass(this)" />
                 <img class="icon-zoom-in" id="zoom-in" onclick="getClass(this)" />
                 <img class="icon-zoom-out" id="zoom-out" onclick="getClass(this)" />"
-
-            </div>
            
+
         </div>
     </form>
 </body>
