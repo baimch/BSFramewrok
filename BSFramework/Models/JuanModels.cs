@@ -15,7 +15,7 @@ namespace BSFramework.Models
         [Required]
         [Display(Name = "名称")]
         public string JuanName { get; set; }
-        [Display(Name = "编号")]
+        [Display(Name = "编号编号编号")]
         public string JuanNumber { get; set; }
 
         [Required]
