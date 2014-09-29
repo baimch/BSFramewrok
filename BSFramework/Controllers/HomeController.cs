@@ -62,7 +62,7 @@ namespace BSFramework.Controllers
         }
         public ActionResult AccordionManage()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your contact page.aaa";
 
             return View();
         }
