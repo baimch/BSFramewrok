@@ -40,8 +40,11 @@ obj/
 _ReSharper*/
 packages*/
 *.cache
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 4a1a826a7f4abff3d6a5cde64f04106d6365dc07
 
 # =========================
 # Operating System Files
