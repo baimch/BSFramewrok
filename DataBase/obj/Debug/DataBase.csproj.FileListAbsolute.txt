@@ -10,15 +10,3 @@ D:\GitHub\FarmManage\DataBase\bin\Debug\EntityFramework.SqlServer.dll
 D:\GitHub\FarmManage\DataBase\bin\Debug\DatabaseModels.pdb
 D:\GitHub\FarmManage\DataBase\bin\Debug\EntityFramework.xml
 D:\GitHub\FarmManage\DataBase\bin\Debug\EntityFramework.SqlServer.xml
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\DataBase.dll.config
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\DataBase.dll
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\DataBase.pdb
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\DatabaseModels.dll
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\EntityFramework.dll
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\EntityFramework.SqlServer.dll
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\DatabaseModels.pdb
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\EntityFramework.xml
-D:\GitHub\BSFramewrok\DataBase\bin\Debug\EntityFramework.SqlServer.xml
-D:\GitHub\BSFramewrok\DataBase\obj\Debug\DataBase.csprojResolveAssemblyReference.cache
-D:\GitHub\BSFramewrok\DataBase\obj\Debug\DataBase.dll
-D:\GitHub\BSFramewrok\DataBase\obj\Debug\DataBase.pdb
