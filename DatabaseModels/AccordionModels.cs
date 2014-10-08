@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseModels
 {
+    //导航分组实体类
    public  class AccordionModels
     {
        [Required]

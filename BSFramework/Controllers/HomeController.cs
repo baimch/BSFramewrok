@@ -120,17 +120,17 @@ namespace BSFramework.Controllers
         }
         public ActionResult AccordionAdd()
         {
-            string[] fn = Directory.GetFiles("D:/GitHub/BSFramewrok/BSFramework/Scripts/css/icons");
-            List<string> imgstring = new List<string>();
-            string aa = "";
-            foreach (string s in fn)
-            {
-                string tmp = s.Substring(s.LastIndexOf('\\') + 1);
-                tmp = tmp.Substring(0, tmp.LastIndexOf('.'));
-                tmp = string.Format("<img class=" + "icon-" + "{0}" + " id={1} />",tmp,tmp);
-                imgstring.Add(tmp);
-                aa += tmp;
-            }
+            //string[] fn = Directory.GetFiles("D:/GitHub/BSFramewrok/BSFramework/Scripts/css/icons");
+            //List<string> imgstring = new List<string>();
+            //string aa = "";
+            //foreach (string s in fn)
+            //{
+            //    string tmp = s.Substring(s.LastIndexOf('\\') + 1);
+            //    tmp = tmp.Substring(0, tmp.LastIndexOf('.'));
+            //    tmp = string.Format("<img class=" + "icon-" + "{0}" + " id={1} />",tmp,tmp);
+            //    imgstring.Add(tmp);
+            //    aa += tmp;
+            //}
              
 
             return View();

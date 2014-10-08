@@ -8,6 +8,7 @@ namespace BSFramework.Models
 {
     public class PigModels
     {
+	//猪实体类
         [Required]
         [Key]
         public string PigGUID { get; set; }
